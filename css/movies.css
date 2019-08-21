@@ -1,0 +1,157 @@
+/* MOVIE SECTION */
+
+.movies-container{
+    font-size: 16px;
+    display: none;
+    grid-template-columns: minmax(auto, 1024px);
+    justify-content: center;
+    height: 92vh;
+    border-right: 1px solid gray;
+}
+
+h2{  
+    position: sticky; 
+    left: 0;
+    font-size: 1.1em;
+    margin: 0;    
+}
+
+.movies{    
+    min-width: 512px;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-areas: "movie-menu movie-categories";
+    height: 92vh;
+    border-right: 1px solid gray;
+}
+
+.movie-categories{
+    grid-area: movie-categories;    
+    overflow: auto;
+}
+
+
+.movie-section{
+    display: grid;    
+    grid-template-rows: auto auto;
+    overflow: hidden;
+    grid-gap: 15px;    
+    justify-content: center;
+    margin: 20px 0 20px 20px;
+}
+
+.movie-list{
+    display: grid;
+    grid-template-columns: 310px;
+    grid-auto-columns: 310px;
+    grid-auto-flow: column;
+    grid-gap: 20px;    
+    overflow: auto;
+}
+
+.movie-item{
+    width: 95%;
+    height: 95%;    
+    position: relative;  
+    overflow: hidden;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px #000;
+    justify-self: center;
+    align-self: center;
+}
+
+.movie-container{    
+    width: 100%;
+    margin: 0;    
+}
+
+.movie-container img{
+    width: 100%;
+    vertical-align: top;
+}
+
+h3{
+    font-size: 1.5em;
+    margin: 0;
+    margin-bottom: 5px;
+}
+
+.movie-overlay{
+    background: rgba(252,100,98, .8);
+    color: #FFF;
+    font-size: .8em;
+    padding: 10px;
+    position: absolute;
+    top: 50%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.movie-menu{    
+    grid-area: movie-menu;
+    background: rgb(252, 100, 98);
+    color: #FFF;
+    display: grid;    
+    grid-template-rows: repeat(3,auto) 1fr;
+    grid-gap: 25px;
+    padding: 25px 5px;
+}
+
+.movie-menu-item{
+    text-align: center;   
+    cursor: pointer;
+}
+
+.movie-menu-item i{
+    font-size: 1.5em;
+}
+.movie-menu-item p{
+    font-size: .8em;
+}
+
+.movie-menu-item:nth-of-type(4){
+    align-self: end;
+}
+
+.icon-options:before {
+    content: "\e903";
+}
+.icon-flame:before {
+    content: "\e904";
+}
+.icon-home:before {
+    content: "\e905";    
+}
+
+@media screen and (max-width: 767px){
+    .movies-container{
+        font-size: 15px;
+    }
+    .movies{                    
+        grid-template-columns: 1fr;
+        grid-template-areas: "movie-categories"
+                             "movie-menu";  
+    }
+
+    .movie-menu{                            
+        grid-template-columns: repeat(4,1fr);
+        grid-template-rows: auto;
+        padding: 5px 0;
+    }
+}
+
+@media screen and (max-width: 480px ){
+    .movies-container{
+        font-size: 12px;
+    }
+
+    .movie-list{
+        grid-template-columns: 210px;
+        grid-auto-columns: 210px;
+    }
+
+    .movie-menu-item:nth-of-type(4){
+        align-self: start;
+    }
+}
